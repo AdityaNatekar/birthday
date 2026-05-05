@@ -258,45 +258,5 @@
               <p><a><button type="button" class="submit-btn" onclick="Nextpage()">KNOW MORE</button></a></p>
             </div>
            </div> 
-
-      
-
-           <script>
-            function showVideo(videoId) {
-              // Show the video overlay and container
-              var overlay = document.getElementById("video-overlay-" + videoId);
-              var container = document.getElementById("video-container-" + videoId);
-              overlay.style.display = "block";
-              container.style.display = "block";
-            
-              // Pause any existing YouTube videos
-              var player = container.querySelector("iframe");
-              player.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            }
-            
-            function hideVideo(videoId) {
-              // Hide the video overlay and container
-              var overlay = document.getElementById("video-overlay-" + videoId);
-              var container = document.getElementById("video-container-" + videoId);
-              overlay.style.display = "none";
-              container.style.display = "none";
-            
-              // Pause the video
-              var video = container.querySelector("iframe");
-              video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-            }
-            
-            document.getElementById("video-overlay-1").addEventListener("click", function() {
-              hideVideo("1");
-            });
-            document.getElementById("video-overlay-2").addEventListener("click", function() {
-              hideVideo("2");
-            });
-
-
-            function Nextpage() {
-                window.location.href = "./today.html";
-            }
-            </script>
 </body>
 </html>
